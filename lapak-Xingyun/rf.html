@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapak-Xingyun - Store Senjata Api</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(bg-1.img);
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #d87e00;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        header .logo img {
+            width: 100px;
+            height: auto;
+            max-width: 100%;
+        }
+
+        header .search-container {
+            position: relative;
+        }
+
+        header .search-container input {
+            padding: 10px;
+            width: 200px;
+            border-radius: 25px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+            background-color: #fff;
+            color: #000;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        header nav ul li a:hover {
+            color: #f0a500;
+        }  
+        .product-card img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #222;
+            padding: 20px;
+            width: 30%;
+            margin: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+        }
+        .product-card h3 {
+            font-size: 1.8em;
+            margin: 15px 0;
+            color: #f0a500;
+        }
+
+        .product-card .price {
+            font-size: 1.5em;
+            color: #f0a500;
+            margin-bottom: 20px;
+        }
+
+        .product-card .btn {
+            background-color: #f0a500;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card .btn:hover {
+            background-color: #d87e00;
+        }
+
+        footer {
+            background-color: #d87e00;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        footer {
+                padding: 15px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="lg.png" alt="Logo Lapak-Xingyun" />
+        </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Cari Produk..." />
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#shop">Produk</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <center>
+    <h2>Detail Produk</h2>
+</center>
+<hr>
+    <div class="products">
+        <div class="product-card">
+            <img src="rifle.jpg" alt="rifle" >
+            <h3>Rifle</h3>
+            <p>SMG ringan, kompak, dan kaliber menengah  
+            sehingga dapat dikendalikan secara otomatis,dan 
+             senapan cukup akurat dan 
+            kuat untuk menjadi senjata 
+            yang berguna pada jarak 300m (ditetapkan sebagai 
+            ujung tombak pertempuran infanteri yang 
+            paling umum selama PD II... 
+            sebagian besar pada jarak 1-200m, sebenarnya</p>
+            <h3>Rp. 120.000.000</h3>
+            <a href="beli.html" class="btn">Buy Now</a>
+            <a href="index.html" class="btn">Back</a>
+        </div>
+        </div>
+        </body>
+        </html>
+

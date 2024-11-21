@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapak-Xingyun - Store Senjata Api</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #d87e00;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        header .logo img {
+            width: 80px;
+            height: 100%;
+            max-width: 90%;
+        }
+
+        header .search-container {
+            position: relative;
+        }
+
+        header .search-container input {
+            padding: 10px;
+            width: 200px;
+            border-radius: 25px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+            background-color: #fff;
+            color: #000;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        header nav ul li a:hover {
+            color: #f0a500;
+        }
+
+        .hero {
+            background-image: url('bg.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 500px;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+        }
+
+        .hero-content p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+        .huju-content p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        }
+            .btn {
+            background-color: #f0a500;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d87e00;
+        }
+
+        .product-section {
+            padding: 50px 0;
+            background-image: url('product-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .product-section h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            color: #f0a500;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #222;
+            padding: 20px;
+            width: 30%;
+            margin: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-card h3 {
+            font-size: 1.8em;
+            margin: 15px 0;
+            color: #f0a500;
+        }
+
+        .product-card .price {
+            font-size: 1.5em;
+            color: #f0a500;
+            margin-bottom: 20px;
+        }
+
+        .product-card .btn {
+            background-color: #f0a500;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-card .btn:hover {
+            background-color: #d87e00;
+        }
+
+        footer {
+            background-color: #d87e00;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f0a500;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 22px;
+            display: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #d87e00;
+        }
+
+        @media (max-width: 1024px) {
+            header .logo img {
+                width: 40px;
+            }
+
+            .hero-content h2 {
+                font-size: 3em;
+            }
+
+            .product-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header nav ul li {
+                margin: 10px 0;
+            }
+
+            .product-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .hero-content h2 {
+                font-size: 2.5em;
+            }
+
+            .hero-content p {
+                font-size: 1.2em;
+            }
+
+            .hero-content .btn {
+                font-size: 1.1em;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 400px;
+            }
+
+            header .logo img {
+                width: 100px;
+            }
+
+            header .search-container input {
+                width: 150px;
+            }
+
+            .product-card {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .product-card h3 {
+                font-size: 1.5em;
+            }
+
+            .product-card .price {
+                font-size: 1.3em;
+            }
+
+            .product-card .btn {
+                font-size: 1.1em;
+                padding: 8px 16px;
+            }
+
+            footer {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="lg.png" alt="Logo Lapak-Xingyun" />
+        </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Cari Produk..." />
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="#shop" class="btn">Produk</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="https://wa.me/+6287781464392">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Menjual Senjata Api Berkualitas</h2>
+            <p>Pilih dari berbagai koleksi senjata api terbaik kami, siap untuk dibeli secara online.</p>
+            <a href="#shop" class="btn">Lihat Produk </a>
+        </div>
+    </section>
+ 
+    <section id="shop" class="product-section">
+        <h2>Produk Kami</h2>
+        <div class="products">
+            <div class="product-card">
+                <img src="pistol.jpg" alt="Pistol" />
+                <h3>Pistol XYZ</h3>
+                <p class="price">Rp 50.000.000</p>
+                <a href="pstl.html" class="btn">Detail Produk</a>
+            </div>
+            <div class="product-card">
+                <img src="rifle.jpg" alt="Rifle" />
+                <h3>Rifle ABC</h3>
+                <p class="price">Rp 120.000.000</p>
+                <a href="rf.html" class="btn">Detail produk</a>
+            </div>
+            <div class="product-card">
+                <img src="shotgun.jpg" alt="Shotgun" />
+                <h3>Shotgun DEF</h3>
+                <p class="price">Rp 78.500.000</p>
+                <a href="sg.html" class="btn">Detail produk</a>
+            </div>
+        </div>
+        <section id="about" class="huju">
+            <div class="huju-content">
+                <center>
+                <h1>product By :</h1>
+                <p>Lapak xingyun</p>
+                <h1>Design Web By :</h1>
+                <p>Xingyun Development</p>
+            </center>
+            </div>
+        </section>
+    
+    </section>
+    <h2 style="border-style: solid; border-color: #fff; color: red; padding: 0 15px; margin: 10px;">WARNING!!</h2>
+    <h2 style="border-style: solid; border-color: #fff; padding: 0 15px; margin: 10px;">Untuk membeli senjata dari toko kami memerlukan surat izin dari negara seperti hal nya Pasal 15 ayat (2) huruf e UU No.2 Tahun 2002 tentang Kepolisian Nasional Republik Indonesia, Polri sebagai pihak yang berwenang memberikan izin dan melakukan pengawasan senjata api, bahan peledak, dan senjata tajam.</h2>    
+<br>
+    <footer>
+        <p>&copy; 2024 Lapak-Xingyun | Semua Hak Dilindungi</p>
+    </footer>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+    <script>
+        window.onscroll = function() {
+            let scrollButton = document.querySelector(".scroll-to-top");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
